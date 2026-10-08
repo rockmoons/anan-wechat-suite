@@ -1,0 +1,24 @@
+# ============================================================
+# anan-wechat-suite / .gitignore
+# ============================================================
+
+# ★ 密钥文件：绝不进技能包、绝不外发、绝不提交
+#   技能目录下的 config.json 存着你的 AppID / AppSecret，
+#   它只应该待在你本机。打完包后确认 zip 里没有它。
+config.json
+config.json.tmp
+config.local.json
+*.secret.json
+
+# 运行产物
+output/
+*.wechat.html
+__pycache__/
+*.pyc
+*.pyo
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,22 @@
+{
+  "_说明": "这是模板。**别手动复制它**——直接跑 python scripts/setup.py，问几个问题就会自动生成同目录下的 config.json。",
+  "_安全红线": "config.json 只存在本机，里面的密钥只发往 api.weixin.qq.com 官方域名，不上传、不外发、不写日志。不要把这个文件发给任何人，也不要提交到 git。",
+  "_怎么填": "AppID 与 AppSecret 在「微信开发者平台」→ 首页/服务号 → 选你的公众号 → 基础信息；接口权限在「接口管理 → 接口权限与额度」。老路径「公众号后台 → 设置与开发 → 基本配置」2025-12-01 起已迁移，打不开了，照着老教程找必然卡住。",
+  "_IP白名单": "「基础信息」页下方的「API IP白名单」要加上本机出口 IP（跑 python scripts/publish.py --myip 能看到），否则换 token 报 40164。家庭宽带 IP 会变，变了要重加。",
+  "_两条路": "跟号型无关：配了 AppID + AppSecret + IP白名单就走官方 API 直发草稿箱；这一格标了 paste（或跑文章时加 --mode paste）就走粘贴模式，不需要任何密钥（永远可用的保底）。★ 还没配置就跑发布会明确报错并指向 python scripts/setup.py，不会悄悄降级成粘贴。要连发布一起做就加 --publish（认证号才行；发布前会先把标题/封面/摘要报给你看，确认后再 --publish-go）。群发永远不做。2026-10-06 实测：个人订阅号（个人主体、未认证）同样三步全过，能直发草稿箱。",
+  "active": "service",
+  "accounts": {
+    "service": {
+      "name": "我的服务号",
+      "type": "api",
+      "appid": "",
+      "appsecret": ""
+    },
+    "personal": {
+      "name": "我的个人号",
+      "type": "paste",
+      "appid": "",
+      "appsecret": ""
+    }
+  }
+}
